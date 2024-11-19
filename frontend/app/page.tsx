@@ -22,9 +22,9 @@ export default function Home() {
     fetchHotels();
   }, []);
 
-  const handleClick = (id: number) => {
-    console.log("Navigating to hotel with ID:", id); // Debug log
-    router.push(`/hotels/${id}`);
+  const handleClick = (hotel: Hotel) => {
+    console.log("Navigating to hotel with ID:", hotel.id); // Debug log
+    router.push(`/hotels/${hotel.slug}/${hotel.id}`);
   };
 
   return (
@@ -34,7 +34,7 @@ export default function Home() {
         {hotels.map((hotel) => (
           <div
             key={hotel.id}
-            onClick={() => handleClick(hotel.id)}
+            onClick={() => handleClick(hotel)}
             className="bg-white p-4 shadow-md rounded-lg cursor-pointer hover:shadow-lg transition duration-300"
           >
             <h2 className="text-xl font-semibold">{hotel.title}</h2>

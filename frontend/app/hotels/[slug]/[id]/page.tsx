@@ -5,7 +5,7 @@ import { useParams } from "next/navigation"; // Use the correct hook
 import { Hotel } from "@/models/hotelModel";
 
 export default function HotelDetails() {
-  const { id } = useParams();  // Use the hook to get the dynamic param
+  const { slug, id } = useParams();  // Use the hook to get the dynamic param
   const [hotel, setHotel] = useState<Hotel | null>(null);
 
   useEffect(() => {
