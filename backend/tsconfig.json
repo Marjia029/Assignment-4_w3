@@ -111,5 +111,5 @@
     "outDir": "./dist"                                 /* Skip type checking all .d.ts files. */
   },
   "include": ["src/**/*", "jest.config.js"],
-  "exclude": ["node_modules", "dist", "coverage", "**/*.test.ts"]
+  "exclude": ["node_modules", "dist", "coverage"]
 }

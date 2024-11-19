@@ -28,16 +28,25 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 p-4">
+    <div className="min-h-screen bg-gray-100 p-4 flex flex-col items-center">
       <h1 className="text-3xl font-bold text-center mb-6">Welcome to Next.js!</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="flex flex-col gap-6">
         {hotels.map((hotel) => (
           <div
             key={hotel.id}
             onClick={() => handleClick(hotel)}
-            className="bg-white p-4 shadow-md rounded-lg cursor-pointer hover:shadow-lg transition duration-300"
+            className="bg-white w-96 h-44 p-4 shadow-md rounded-lg cursor-pointer hover:shadow-lg transition duration-300 flex flex-col"
           >
-            <h2 className="text-xl font-semibold">{hotel.title}</h2>
+            {hotel.images?.[0] && (
+              <img
+                src={`http://localhost:5000${hotel.images[0]}`}
+                alt={hotel.title}
+                className="w-48 h-32 rounded-md object-cover mx-auto mb-2"
+              />
+            )}
+            <div className="flex-1 flex items-center justify-center">
+              <h2 className="text-xl font-semibold text-center">{hotel.title}</h2>
+            </div>
           </div>
         ))}
       </div>

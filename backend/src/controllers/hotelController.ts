@@ -247,3 +247,5 @@ export const getAllHotels = async (req: Request, res: Response): Promise<void> =
   }
 };
 
+
+
