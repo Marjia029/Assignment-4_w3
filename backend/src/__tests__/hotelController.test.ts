@@ -1,8 +1,23 @@
 import { Express } from 'express';
 import request from 'supertest';
-import { app } from '../index';
+import { app, startServer, stopServer } from '../index';
 import * as hotelController from '../controllers/hotelController';
 import { validateHotel } from '../validation/hotelValidation';
+
+let server: any;
+let port: number;
+
+beforeAll(async () => {
+  port = await startServer();
+  console.log(`Test server running on port ${port}`);
+});
+
+afterAll(async () => {
+  await stopServer();
+  console.log(`Test server on port ${port} closed`);
+});
+
+
 
 // Mock both the controller and validation
 jest.mock('../controllers/hotelController');
@@ -832,3 +847,9 @@ describe('GET /hotels', () => {
     });
   });
 });
+
+
+
+
+
+

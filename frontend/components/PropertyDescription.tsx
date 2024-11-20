@@ -10,7 +10,7 @@ const PropertyDescription = () => {
   return (
     <div className="mt-8 flex">
       {/* Property Description Section with 2/3 Width on Larger Screens */}
-      <div className="w-full md:w-2/3 px-4">
+      <div className="w-full md:w-2/3">
         {/* About this Property Section */}
         <div className="mb-6">
           <div className="text-2xl font-semibold mb-4">About this property</div>

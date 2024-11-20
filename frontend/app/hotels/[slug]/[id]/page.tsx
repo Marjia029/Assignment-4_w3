@@ -96,7 +96,7 @@ export default function HotelDetails() {
             <Map latitude={latitude} longitude={longitude} locationName={address} />
             <NearbyLocations />
           </div>
-          <div className="container mx-auto p-4">
+          <div className="container">
             <RoomsSection />
           </div>
                 

@@ -1,4 +1,3 @@
-// imageController.ts
 import { Request, Response } from 'express';
 import fs from 'fs';
 import path from 'path';
@@ -34,29 +33,34 @@ const fileFilter = (req: Request, file: Express.Multer.File, cb: multer.FileFilt
   cb(null, true);
 };
 
-// Create multer instance with configuration
+// Create multer upload middleware
 export const upload = multer({ 
   storage,
   fileFilter,
   limits: {
     fileSize: 5 * 1024 * 1024 // 5MB limit
   }
-}).array('images', 10);
+});
+
+// Middleware for multiple image uploads
+export const uploadMultipleImages = (req: Request, res: Response, next: any) => {
+  upload.array('images', 10)(req, res, next);
+};
 
 export const uploadImage = async (req: Request, res: Response): Promise<void> => {
-  // Use multer as middleware with error handling
-  upload(req, res, async (err) => {
-    if (err) {
-      console.error('Multer error:', err);
-      return res.status(400).json({ error: err.message });
+
+  
+
+    uploadMultipleImages(req, res, async (err: any) => {
+      if (err) {
+        console.error('Multer error:', err);
+        res.status(400).json({ error: err.message });
+        return;
     }
 
     try {
       const identifier = req.body.identifier;
       
-      console.log('Request body:', req.body); // Add this for debugging
-      console.log('Files:', req.files); // Add this for debugging
-
       if (!identifier) {
         res.status(400).json({ error: 'Identifier is required' });
         return;
