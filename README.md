@@ -109,7 +109,7 @@ Each hotel contains multiple rooms, and each room has the following details:
 
 ## Endpoints For Data Creation in Server
 ### 1. POST/hotels
-Url for creating a new hotel record is - http://localhost:5000/hotels
+Url for creating a new hotel record is - ```http://localhost:5000/hotels```
 
 The json format of sending data-
 ```json
@@ -195,7 +195,7 @@ the "images" field is not required.
 ```
 The records are saved ad hotel-id.json format in ***/data/hotels*** directory. You can create hotel either using ***POSTMAN*** application or ***THUNDER CLIENT*** extension from vs code.
 ### 2. GET/hotels/:hotel-id
-Retrieve detailed information about a hotel using its unique ID. Url - http://localhost:5000/hotels/:hotel-id or http://localhost:5000/hotels/:hotel-slug
+Retrieve detailed information about a hotel using its unique ID. Url - ```http://localhost:5000/hotels/:hotel-id``` or ```http://localhost:5000/hotels/:hotel-slug```
 - **Response**: A JSON object containing hotel details, including image URLs.
 The server will return the response of the specified hotel.
 
@@ -237,7 +237,7 @@ The server will return the response of the specified hotel.
 ```
 
 ### 3. PUT/hotels/:hotel-id
-Update information about a hotel using its unique ID. Url - http://localhost:5000/hotels/:hotel-id 
+Update information about a hotel using its unique ID. Url - ```http://localhost:5000/hotels/:hotel-id``` 
 
 ### 4. POST/images
 Updates the **images** associated with the slug. Url - ```http://localhost:5000/images```

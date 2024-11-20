@@ -29,7 +29,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gray-100 p-4 flex flex-col items-center">
-      <h1 className="text-3xl font-bold text-center mb-6">Welcome to Next.js!</h1>
+      <h1 className="text-3xl font-bold text-center mb-6">Our Hotels</h1>
       <div className="flex flex-col gap-6">
         {hotels.map((hotel) => (
           <div
