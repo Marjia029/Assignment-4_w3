@@ -258,7 +258,7 @@ Updates the **roomImage** associated with the slug. Url - ```http://localhost:50
 #### Instructions
 - Open POSTMAN
 - Set the htttp request method to POST
-- Set the url to ````http://localhost:5000/images/rooms/:hotel-id/:room-slug```
+- Set the url to ```http://localhost:5000/images/rooms/:hotel-id/:room-slug```
 - Go to Body and select form-data
 - Set the **Key** as **roomImage** and add image of the hotel-room to the value.
 
