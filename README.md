@@ -1,46 +1,81 @@
-# Hotel Management API
+# React Assignment - Hotel Details Application
 
-## Overview
+## Task Overview
 
-This project is a backend API developed using **Node.js** and **Express.js** to manage hotel details. The API allows users to interact with hotel data stored in JSON files. It supports operations such as retrieving, inserting, and updating hotel records, as well as uploading multiple images for hotels. The project also includes unit tests to verify the functionality of each endpoint.
+This project involves converting an initial HTML and CSS design into a server-side, component-based application using React and Next.js. The application fetches hotel data dynamically using an API developed with Node.js and Express.js. TypeScript is used throughout the project to ensure type safety, and unit tests are written for critical components and functionality.
 
-## Features
+## Technologies Used
+- **React** and **Next.js** for building the frontend application
+- **TypeScript** for type safety
+- **Node.js** and **Express.js** for the backend API
+- **Jest** and **React Testing Library** for unit tests
 
-- **POST /hotel**: Insert a new hotel record.
-- **POST /images**: Upload multiple images for a hotel.
-- **GET /hotel/{hotel-id}**: Retrieve detailed information for a specific hotel.
-- **PUT /hotel/{hotel-id}**: Update an existing hotel's data.
+## Project Descriptions
 
-## Requirements
+### API Endpoint
+- **Endpoint**: `GET /hotel/{hotel-id}`
+- **Description**: Fetches the details of a hotel based on the provided `hotel-id`. The API should be developed using Node.js and Express.js and integrated into the frontend.
 
-- **Node.js** and **Express.js**
-- **TypeScript** (optional but recommended for strict typing)
-- **Jest** or **Mocha** for unit testing
-- **Slugify** for generating slugs from hotel titles
-- **Multer** for handling image uploads
-- **VS Code** as IDE for building the project
-- **POSTMAN** for request handling
+### Frontend Page
+- **Page URL Structure**: `/hotel-details/{slug}/{hotel-id}`
+  - Example: `http://localhost:8080/hotel-details/radisson-blu/76512`
+  - The `slug` is a URL-friendly version of the hotel name, and the `hotel-id` is the unique identifier.
 
-## Installation
+### Styling
+- Converted previous HTML/CSS design into reusable React components.
+- Used Tailwind CSS  for styling.
 
-### 1. Clone the Repository
+### TypeScript
+- TypeScript was used throughout the project for type safety, especially for defining types for hotel data.
 
-```bash
-git clone https://github.com/Marjia029/W3_NodeJS_with_Typescript_Assignment.git
-cd W3_NodeJS_with_Typescript_Assignment
-```
-### 2. Install Dependencies
 
-```bash
-npm install
-```
-### 3.  Run the Project
-To start the development server:
 
-```bash
-npm run dev
-```
-The server will run on http://localhost:5000.
+## Setup and Run Instructions
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/Marjia029/Assignment-4_w3.git
+   cd Assignment-4_w3
+   ```
+
+2. **Install Dependencies for Server**:
+    ```bash
+    cd backend
+    npm install
+    ```
+3.  **Run the Server**:
+  To start the development server:
+
+    ```bash
+    cd backend
+    npm run dev
+    ```
+    The server will run on -
+    ```
+    http://localhost:5000
+    ```
+
+4. **Install Dependencies for Client**:
+    ```bash
+    cd frontend
+    npm install --legacy-peer-deps
+    ```
+
+5.  **Run the Client Site**:
+    To start the development server-
+
+    ```bash
+    cd frontend
+    npm run dev
+    ```
+
+    The site will run on -
+    ```
+    http://localhost:3000
+    ```
+    Click the go go to the server. In the Landing Page, there will be cards for every hotels. Click the cards to navigate to the hotel details.
+
+
 
 
 ## Hotel Data Schema
@@ -72,7 +107,7 @@ Each hotel contains multiple rooms, and each room has the following details:
 
 
 
-## Endpoints
+## Endpoints For Data Creation in Server
 ### 1. POST/hotels
 Url for creating a new hotel record is - http://localhost:5000/hotels
 
@@ -204,30 +239,39 @@ The server will return the response of the specified hotel.
 ### 3. PUT/hotels/:hotel-id
 Update information about a hotel using its unique ID. Url - http://localhost:5000/hotels/:hotel-id 
 
-### 4. POST/images/:htel-id
-Updates the **images** associated with the slug. Url - http://localhost:5000/images/:hotel-id
+### 4. POST/images
+Updates the **images** associated with the slug. Url - ```http://localhost:5000/images```
 #### Instructions
 - Open POSTMAN
 - Set the htttp request method to POST
-- Set the url to http://localhost:5000/images/:hotel-id
+- Set the url to 
+  ```http://localhost:5000/images```
 - Go to Body and select form-data
-- Set the **Key** as **images** and add image of the hotel to the value.
+- Set 2 key value pairs. 
+  - 1st key-value pair: **Key=identifier, type=text, value='hotel-id or hotel-slug'** 
+  - 2nd key-value pair:  **Key=images, type=file, value='imags of the hotel'**
+
 
 ### 5. POST/images/rooms/:hotelid/:room-slug
-Updates the **roomImage** associated with the slug. Url - http://localhost:5000/images/rooms/:hotel-id/:room-slug
+Updates the **roomImage** associated with the slug. Url - ```http://localhost:5000/images/rooms/:hotel-id/:room-slug```
 
 #### Instructions
 - Open POSTMAN
 - Set the htttp request method to POST
-- Set the url to http://localhost:5000/images/rooms/:hotel-id/:room-slug
+- Set the url to ````http://localhost:5000/images/rooms/:hotel-id/:room-slug```
 - Go to Body and select form-data
 - Set the **Key** as **roomImage** and add image of the hotel-room to the value.
 
-### Run the Unit Tests
+### Run the Unit Tests for Server
 ```bash
+cd backend
 npm test
 ```
 
-
+### Run the Unit Tests for UI
+```bash
+cd frontend
+npm test
+```
 
 

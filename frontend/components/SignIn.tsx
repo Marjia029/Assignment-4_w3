@@ -6,7 +6,7 @@ const SignIn: React.FC = () => {
   return (
     <div className="signin-card bg-[#1B2640] rounded-lg p-6 text-white mb-4 flex justify-center items-center gap-4">
       <div className="loader-icon">
-        <img src="/assets/sin-in-icon.png" alt="Sign-in Icon" />
+        <img src="/sin-in-icon.png" alt="Sign-in Icon" />
       </div>
       <div className="merge flex flex-col items-center">
         <div className="signin-content text-center mb-4">
